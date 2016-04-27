@@ -26,7 +26,7 @@ def metadata_creator():
         file_label_list = []
         file_id = os.path.splitext(os.path.basename(file))[0]
         file_label_list.append(file_id + ".txt")
-        file_label_list.append(file_id.split("_")[0])
+        file_label_list.append(file_id)
         file_label_list.extend(file_id.split("_"))
         label_list.append(file_label_list)
     maxLen = max(len(l) for l in label_list)

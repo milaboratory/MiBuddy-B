@@ -83,7 +83,7 @@ def mixcr(species, file_R1, file_R2):
         stdout=FNULL, stderr=FNULL)
     mixcr_export.wait()
 
-
+# Converting mixcr output for VDJTools, calc basic stats
 def vdjtools():
     print("Converting files to vdgtools format")
     FNULL = open(os.devnull, 'w')

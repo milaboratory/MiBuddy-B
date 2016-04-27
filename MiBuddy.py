@@ -4,7 +4,7 @@ import os
 import glob
 import pandas as pd
 
-
+# Generating parameters for MiGec assembly
 def assemble_param(minimal_overseq):
     global output_dir
     samples_overseq = {}

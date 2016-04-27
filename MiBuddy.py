@@ -62,7 +62,7 @@ def migec_assemble(file_R1, file_R2, overseq, output_dir):
 def mixcr(species, file_R1, file_R2):
     print("Starting MiXCR alignment for " + os.path.splitext(os.path.basename(file_R1))[0].split("_R1")[0])
     FNULL = open(os.devnull, 'w')
-    mixcr_alignment = subprocess.Popen(['mixcr', 'align', '-r mixcr/', 'alignmentReport.txt', '-f', '-s', species,
+    mixcr_alignment = subprocess.Popen(['mixcr', 'align', '-r mixcr/alignmentReport.txt', '-f', '-s', species,
                                         file_R1, file_R2,
                                         'mixcr/' + os.path.splitext(os.path.basename(file_R1))[0].split("_R1")[
                                             0] + '.vdjca'],
@@ -70,7 +70,7 @@ def mixcr(species, file_R1, file_R2):
     mixcr_alignment.wait()
     print("Starting MiXCR assemble for " + os.path.splitext(os.path.basename(file_R1))[0].split("_R1")[0])
 
-    mixcr_assemble = subprocess.Popen(['mixcr', 'assemble', '-r mixcr/', 'assembleReport.txt', '-f', 'mixcr/' +
+    mixcr_assemble = subprocess.Popen(['mixcr', 'assemble', '-r mixcr/assembleReport.txt', '-f', 'mixcr/' +
                                        os.path.splitext(os.path.basename(file_R1))[0].split("_R1")[0] + '.vdjca',
                                        'mixcr/' + os.path.splitext(os.path.basename(file_R1))[0].split("_R1")[
                                            0] + '.clns'],

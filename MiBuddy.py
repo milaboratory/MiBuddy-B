@@ -18,7 +18,7 @@ def assemble_param(minimal_overseq):
                 output_dir = "assemble_t" + str(minimal_overseq)
     return samples_overseq, output_dir
 
-
+# Creating metadata file for VDJtools
 def metadata_creator():
     label_list = []
     for file in glob.glob("mixcr/*.vdjca"):

@@ -1,7 +1,8 @@
 import argparse
-import subprocess
-import os
 import glob
+import os
+import subprocess
+
 import pandas as pd
 
 # Generating parameters for MiGec assembly
@@ -34,7 +35,7 @@ def metadata_creator():
     for i in range(3, maxLen):
         col_names.append("label_" + str(i - 1))
     metadata.columns = col_names
-    metadata.to_csv("vdjtools/metadata.txt", sep='\t', index=False)
+    metadata.to_csv("mixcr/metadata.txt", sep='\t', index=False)
 
 
 def migec_checkout(barcodesFile):

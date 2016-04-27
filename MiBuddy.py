@@ -90,12 +90,10 @@ def vdjtools():
     vdjtools_convert = subprocess.Popen('vdjtools', 'Convert', '-S', 'MiXCR', '-m', 'vdjtools/metadata.txt',
                                         'vdjtools/', stdout=FNULL, stderr=FNULL)
     vdjtools_convert.wait()
-
     print("Calculating basic statistics")
-    FNULL = open(os.devnull, 'w')
-    vdjtools_BasicStats = subprocess.Popen('vdjtools', 'CalcBasicStats', '-m', 'vdjtools/metadata.txt', 'vdjtools/',
+    vdjtools_basicstats = subprocess.Popen('vdjtools', 'CalcBasicStats', '-m', 'vdjtools/metadata.txt', 'vdjtools/',
                                            stdout=FNULL, stderr=FNULL)
-    vdjtools_BasicStats.wait()
+    vdjtools_basicstats.wait()
 
 
 def pipeline(barcodesFile, species, minimal_overseq):

@@ -35,7 +35,7 @@ def metadata_creator():
     for i in range(3, maxLen):
         col_names.append("label_" + str(i - 1))
     metadata.columns = col_names
-    metadata.to_csv("mixcr/metadata.txt", sep='\t', index=False)
+    metadata.to_csv("mixcr/metadata.txt", sep='\t', index=False, na_rep="NA")
 
 
 def migec_checkout(barcodesFile):
@@ -87,11 +87,11 @@ def mixcr(species, file_R1, file_R2):
 def vdjtools():
     print("Converting files to vdgtools format")
     FNULL = open(os.devnull, 'w')
-    vdjtools_convert = subprocess.Popen('vdjtools', 'Convert', '-S', 'MiXCR', '-m', 'mixcr/metadata.txt',
-                                        'vdjtools/', stdout=FNULL, stderr=FNULL)
+    vdjtools_convert = subprocess.Popen(['vdjtools', 'Convert', '-S', 'MiXCR', '-m', 'mixcr/metadata.txt',
+                                        'vdjtools/'], stdout=FNULL, stderr=FNULL, bu)
     vdjtools_convert.wait()
     print("Calculating basic statistics")
-    vdjtools_basicstats = subprocess.Popen('vdjtools', 'CalcBasicStats', '-m', 'vdjtools/metadata.txt', 'vdjtools/',
+    vdjtools_basicstats = subprocess.Popen(['vdjtools', 'CalcBasicStats', '-m', 'vdjtools/metadata.txt', 'vdjtools/'],
                                            stdout=FNULL, stderr=FNULL)
     vdjtools_basicstats.wait()
 

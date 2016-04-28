@@ -109,7 +109,7 @@ def pipeline(barcodesFile, species, minimal_overseq):
     for file in glob.glob("migec/checkout/*_R1.fastq.gz"):
         filename = os.path.splitext(os.path.basename(file))[0]
         if filename.split("_R1")[0] in samples_overseq.keys():
-            print("Assembling MIGs for " + filename.split("_R1")[0] + ". Minimal numbers of rids per MIG: " +
+            print("Assembling MIGs for " + filename.split("_R1")[0] + ". Minimal number of reeds per MIG: " +
                   samples_overseq[filename.split("_R1")[0]])
             file_1_path = "migec/checkout/" + filename.split("_R1")[0] + "_R1" + ".fastq.gz"
             file_2_path = "migec/checkout/" + filename.split("_R1")[0] + "_R2" + ".fastq.gz"

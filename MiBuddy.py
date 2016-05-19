@@ -2,7 +2,6 @@ import argparse
 import glob
 import os
 import subprocess
-
 import pandas as pd
 
 # Generating parameters for MiGec assembly
@@ -132,8 +131,8 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("file_with_barcodes", help="Specify barcodes file")
-    parser.add_argument("-s", help="Specify species: mmu for Mus musculus, hsa - Homo sapiens")
+    parser.add_argument("file_with_barcodes", help="Specify barcodes file", required=True)
+    parser.add_argument("-s", help="Specify species: mmu for Mus musculus, hsa - Homo sapiens", required=True)
     parser.add_argument("--overseq", "-minimal_overseq", type=int, default=None,
                         help="Force minimal overseq value for all samples")
     args = parser.parse_args()
